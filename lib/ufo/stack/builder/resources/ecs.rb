@@ -26,7 +26,7 @@ class Ufo::Stack::Builder::Resources
             "CreateTargetGroupIsTrue",
             [
               {
-                ContainerName: "web",
+                ContainerName: @container[:name],
                 ContainerPort: @container[:port],
                 TargetGroupArn: {Ref: "TargetGroup"}
               }
@@ -37,7 +37,7 @@ class Ufo::Stack::Builder::Resources
                 [],
                 [
                   {
-                    ContainerName: "web",
+                    ContainerName: @container[:name],
                     ContainerPort: @container[:port],
                     TargetGroupArn: {Ref: "ElbTargetGroup"}
                   }
